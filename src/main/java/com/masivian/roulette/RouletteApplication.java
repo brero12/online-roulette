@@ -10,10 +10,10 @@ import org.springframework.data.redis.serializer.GenericToStringSerializer;
 
 @Configuration
 @SpringBootApplication
-public class DemoApplication {
+public class RouletteApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(RouletteApplication.class, args);
 	}
 
 	@Bean
