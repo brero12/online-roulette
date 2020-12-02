@@ -2,12 +2,16 @@ version: '2'
 services:
   app:
     build: .
+    environment:
+     - HOST_REDIS=localhost
+     - PORT_REDIS=6379
     ports:
      - "8082:8082"
     links:
       - "db:redis"
   db:
     image: "redis:latest"
+    command: ["redis-server", "--bind", "redis", "--port", "6379"]
     hostname: redis
     environment:
      - ALLOW_EMPTY_PASSWORD=yes
