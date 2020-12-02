@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "ceda5e92-735e-4128-ac97-a1feb812b830",
-		"name": "spring roulettes - masivian",
+		"name": "spring roulettes - masivian test",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -47,7 +47,7 @@
 			"response": []
 		},
 		{
-			"name": "update roulette by ID",
+			"name": "Open roulette by ID",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -58,18 +58,45 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"729280953\",\n    \"state\": \"closed\"\n}"
+					"raw": "{\n    \"id\": \"729280953\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8082/roulette/729280953",
+					"raw": "http://localhost:8082/roulette/open",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8082",
 					"path": [
-						"roulette",
-						"729280953"
+						"roulette/open"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Close roulette by ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"729280953\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/roulette/close",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"roulette/close"
 					]
 				}
 			},
@@ -127,6 +154,34 @@
 					"port": "8082",
 					"path": [
 						"roulette"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create roulette bet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idRoulette\": 1,\n    \"number\": 4,\n    \"color\": \"black\",\n    \"amount\": 1000,\n    \"numeric\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/rouletteBet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"rouletteBet"
 					]
 				}
 			},

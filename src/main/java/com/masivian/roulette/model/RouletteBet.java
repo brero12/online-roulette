@@ -21,5 +21,6 @@ public class RouletteBet implements Serializable {
 	private @NonNull String idUserBet;	
 	private int number;	
 	private String color;	
-	private float ammount;	
+	private float ammount;
+	private @NonNull boolean isNumeric;	
 }
